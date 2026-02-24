@@ -17,7 +17,11 @@ body {
 }
 
 @layer components {
-  /* 调整 Element Plus 必填项星号位置，仍使用 Tailwind 颜色工具类 */
+  /* 表单 label 加粗 + 调整必填星号位置 */
+  .el-form-item__label {
+    @apply font-semibold text-gray-800;
+  }
+
   .el-form-item__label::before {
     content: '' !important;
     margin-right: 0;
@@ -26,5 +30,20 @@ body {
   .el-form-item.is-required .el-form-item__label::after {
     content: '*';
     @apply text-red-500 ml-1;
+  }
+
+  /* 提交按钮文本加粗 */
+  .submit-button span {
+    @apply font-bold;
+  }
+
+  /* “添加附件”按钮文字：字号更小，字重加粗 */
+  .attachment-button span {
+    @apply text-xs font-semibold;
+  }
+
+  /* 输入框 placeholder 字体略小、颜色更淡一些 */
+  .el-input__inner::placeholder {
+    @apply text-xs text-gray-400;
   }
 }

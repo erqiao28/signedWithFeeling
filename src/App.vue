@@ -62,18 +62,18 @@ const handleUpload = (rawFile, field) => {
   <!-- 第一层：背景，两张全宽色块（40% + 60% 高度） -->
   <div class="relative min-h-screen">
     <div class="flex flex-col">
-      <div class="h-[40vh] w-full bg-[#1677ff]"></div>
-      <div class="h-[60vh] w-full bg-[#e6f4ff]"></div>
+      <div class="h-[43vh] w-full bg-[#1677ff]"></div>
+      <div class="h-[57vh] w-full bg-[#e6f4ff]"></div>
     </div>
 
-    <!-- 第二层：表单卡片，覆盖在背景上，水平垂直居中 -->
-    <div class="absolute inset-0 flex items-center justify-center px-4 md:px-8">
+    <!-- 第二层：表单卡片，覆盖在背景上，水平居中，距顶部约 200px -->
+    <div class="absolute inset-0 flex justify-center px-4 md:px-8">
       <div
-        class="w-full max-w-6xl rounded-xl bg-white px-4 py-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] md:px-12 md:py-14 min-h-[360px] md:min-h-[420px]"
+        class="w-full max-w-[1100px] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:px-10 md:pt-25 md:pb-4 mt-[140px] md:mt-[200px] mb-20"
       >
-        <h1 class="mb-8 text-3xl font-bold text-gray-900">有感签约</h1>
+        <h1 class="mb-6 text-4xl font-bold text-gray-900">有感签约</h1>
         <el-form ref="formRef" :model="form" :rules="rules" label-position="top">
-          <el-row :gutter="24" class="mb-2">
+          <el-row :gutter="24" class="mb-1">
             <el-col :xs="24" :sm="12" :md="8">
               <el-form-item label="姓名" required prop="userName">
                 <el-input v-model="form.userName" placeholder="请填写文本内容" clearable />
@@ -90,7 +90,7 @@ const handleUpload = (rawFile, field) => {
               </el-form-item>
             </el-col>
           </el-row>
-          <el-row :gutter="24" class="mb-4">
+          <el-row :gutter="24" class="mb-2">
             <el-col :xs="24" :sm="12" :md="8">
               <el-form-item label="身份证号" required prop="idCard">
                 <el-input v-model="form.idCard" placeholder="请填写文本内容" clearable />
@@ -106,7 +106,7 @@ const handleUpload = (rawFile, field) => {
                     :file-list="form.idCardFrontPic"
                     accept="image/*"
                   >
-                    <el-button type="default">
+                    <el-button type="default" class="attachment-button">
                       <el-icon><Paperclip /></el-icon>
                       添加附件
                     </el-button>
@@ -124,7 +124,7 @@ const handleUpload = (rawFile, field) => {
                     :file-list="form.idCardBackPic"
                     accept="image/*"
                   >
-                    <el-button type="default">
+                    <el-button type="default" class="attachment-button">
                       <el-icon><Paperclip /></el-icon>
                       添加附件
                     </el-button>
@@ -133,11 +133,11 @@ const handleUpload = (rawFile, field) => {
               </el-form-item>
             </el-col>
           </el-row>
-          <div class="mt-8 flex justify-center">
+          <div class="mt-3 flex justify-center">
             <el-button
               type="primary"
               size="large"
-              class="min-w-[160px] bg-[#1a3a5c] border-[#1a3a5c] hover:bg-[#254a6c] hover:border-[#254a6c]"
+              class="submit-button min-w-[100px] bg-[#1e88e5] border-[#1e88e5] hover:bg-[#125aac] hover:border-[#125aac]"
               @click="submit"
             >
               提交
