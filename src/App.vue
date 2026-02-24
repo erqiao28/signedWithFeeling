@@ -69,7 +69,7 @@ const handleUpload = (rawFile, field) => {
     <!-- 第二层：表单卡片，覆盖在背景上，水平居中，距顶部约 200px -->
     <div class="absolute inset-0 flex justify-center px-4 md:px-8">
       <div
-        class="w-full max-w-[1100px] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:px-10 md:pt-25 md:pb-4 mt-[140px] md:mt-[200px] mb-20"
+        class="w-full max-w-[1100px] bg-white px-4 py-5 shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:px-10 md:py-25 mt-[140px] md:mt-[200px] mb-20"
       >
         <h1 class="mb-6 text-4xl font-bold text-gray-900">有感签约</h1>
         <el-form ref="formRef" :model="form" :rules="rules" label-position="top">
